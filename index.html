@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CRUD</title>
+</head>
+<body>
+    <div class="font-mono">
+        <header class="my-3 mx-5">
+            <h1 class="py-3 text-center text-4xl bg-emerald-300">Cadastro de Clientes</h1>
+        </header>
+
+        <main class="my-3 mx-5 p-3 shadow flex justify-center">
+            <button id="openModal" class="mx-3 p-1 max-h-11 bg-green-300 rounded-lg hover:bg-green-200 hover:text-white">
+                <i class="fa-solid fa-plus text-4xl"></i>
+            </button>
+
+            <div id="modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+                <div class="lg:w-1/2 md:w-2/3 bg-white rounded-lg w-11/12 px-6 py-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <h2 id="titleAddClient" class="text-2xl">Adicionar Cliente</h2>     
+                        <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                            <i class="fa-solid fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <hr class="mb-4">
+                    <form id="form" class="grid grid-cols-12 gap-4 justify-around">
+                        <div class="col-span-12 md:col-span-6 relative">
+                            <label for="name" class="absolute origin-top-left -translate-y-1/2 bg-white py-0 my-0 px-2 ml-3 text-gray-700">Nome</label>
+                            <input type="text" id="name" class="border border-gray-300 w-full rounded-lg px-3 py-2" placeholder="Maria" required>
+                        </div>
+                        <div class="col-span-12 md:col-span-6">
+                            <label for="email" class="absolute origin-top-left -translate-y-1/2 bg-white py-0 my-0 px-2 ml-3 text-gray-700">E-mail</label>
+                            <input type="email" id="email" class="border border-gray-300 w-full rounded-lg px-3 py-2" placeholder="maria@ex.com" required>
+                        </div>
+                        <div class="col-span-12 md:col-span-6">
+                            <label for="cell" class="absolute origin-top-left -translate-y-1/2 bg-white py-0 my-0 px-2 ml-3 text-gray-700">Celular</label>
+                            <input type="tel" id="cell" class="border border-gray-300 w-full rounded-lg px-3 py-2" placeholder="+55(01)2345-6789" required>
+                        </div>
+                        <div class="col-span-12 md:col-span-6">
+                            <label for="city" class="absolute origin-top-left -translate-y-1/2 bg-white py-0 my-0 px-2 ml-3 text-gray-700">Cidade - Estado</label>
+                            <input type="text" id="city" class="border border-gray-300 w-full rounded-lg px-3 py-2" placeholder="São Paulo - SP" required>
+                        </div>
+                        <div class="flex gap-4">
+                            <button id="btnSave" type="submit" data-index="new" class="w-fit bg-amber-400 hover:bg-amber-500 text-white font-semibold rounded-lg px-4 py-2">Criar</button>
+                            <button type="reset" class="w-fit bg-amber-400 hover:bg-amber-500 text-white font-semibold rounded-lg px-4 py-2">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="fixed inset-0 bg-black opacity-50 z-40 hidden" id="modalOverlay"></div>
+              
+            <table class="table-fixed w-full border">
+                <thead class="text-2xl bg-amber-200">
+                    <tr>
+                        <th class="py-1 pl-2">Nome</th>
+                        <th class="py-1 pl-2">E-mail</th>
+                        <th class="py-1 pl-2">Celular</th>
+                        <th class="py-1 pl-2">Cidade</th>
+                        <th class="py-1 pl-2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody class="text-lg" id="table-clients">
+
+                </tbody>
+            </table>
+        </main>
+        <footer class="text-center"><p>Desenvolvido por Giovana Hatten</p></footer>
+    </div>
+    <script src="js/style.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
