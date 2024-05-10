@@ -1,4 +1,4 @@
-# Pokedex-JS
+# CRUD-JS
 
 Este repositório contém o código-fonte para o projeto CRUD-JS. Este projeto foi desenvolvido como treinamento prático, utilizando HTML, Tailwind CSS e JavaScript.
 
